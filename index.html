@@ -27,6 +27,19 @@
       </div>
     </li>
   </script>
+
+  <script type="text/x-handlebars-template" id="book-details-template">
+    <div class="book-items" data-bookid={{book_id}}>
+      <div class="book-container">
+        <img src={{image_url}}>
+        <div class="book-overlay">
+          <h3>{{title}}</h3>
+          <p><em>{{author}}</em>{{isbn}}</p>
+          <p>{{description}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
 </head>
 <body>
   <header>
@@ -37,7 +50,6 @@
     <nav>
         <ul>
           <li><a href="./">home</a></li>
-          <li><a href="./details">details</a></li>
           <li><a href="./new">Add a book!</a></li>
         </ul>
       </nav>
@@ -54,7 +66,7 @@
       </section>
     </section>
     <section>
-      <section class="book-detailed container" id="single-book">
+      <section class="book-details container" id="single-book">
 
       </section>
     </section>
@@ -90,6 +102,7 @@
   <script src="./scripts/views/book-view.js" type="text/javascript"></script>
   <script src="./scripts/views/error-view.js" type="text/javascript"></script>
   <script src="./scripts/views/add-book.js" type="text/javascript"></script>
+  <script src="./scripts/views/detailed-view.js" type="text/javascript"></script>
   <script src="./scripts/controllers/route.js" type="text/javascript"></script>
 </body>
 </html>

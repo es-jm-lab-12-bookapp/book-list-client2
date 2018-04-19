@@ -9,14 +9,15 @@ var app = app || {};
     $('.container').hide();
     $('.book-view').show();
     module.Book.all.map(book => $('#book-list').append(book.toHtml()));
+    module.bookDetails.find();
   };
+
 
   bookView.showAll = function() {
 
     $('.container').hide();
     $('.book-view').show();
-  }
-
+  };
   module.bookView = bookView;
 })(app);
 

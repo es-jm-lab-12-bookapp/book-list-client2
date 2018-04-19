@@ -27,17 +27,20 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   Book.all = [];
   Book.loadAll = rows => Book.all = rows.sort((a, b) => b.title - a.title).map(book => new Book(book));
 
+  Book.loadOne = book => console.log(book);
+
   Book.fetchAll = callback =>
     $.get(`${ENV.apiUrl}/api/v1/books`)
       .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback);
 
-  Book.fetchOne = callback =>
-    $.get(`${ENV.apiUrl}/api/v1/books/:id`)
+  Book.prototype.fetchOne = function(callback) {
+    $.get(`${ENV.apiUrl}/api/v1/books/${this.book_id}`)
       .then(Book.loadOne)
       .then(callback)
       .catch(errorCallback);
+  };
 
   Book.prototype.create = function(callback) {
     $.post(`${ENV.apiUrl}/api/v1/books/`,{

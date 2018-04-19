@@ -8,6 +8,6 @@ page('/*', (ctx, next) => {
 });
 
 page('/', app.bookView.showAll);
-page('/details', app.Book.fetchOne);
+// page('/books/:book_id', app.Book.fetchOne);
 page('/new', app.addBook.init);
 page.start();
