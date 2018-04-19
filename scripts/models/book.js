@@ -22,7 +22,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   Book.prototype.toHtml = function() {
     let template = Handlebars.compile($('#book-list-template').text());
     return template(this);
-  }
+  };
 
   Book.all = [];
   Book.loadAll = rows => Book.all = rows.sort((a, b) => b.title - a.title).map(book => new Book(book));
@@ -39,16 +39,16 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
       .then(callback)
       .catch(errorCallback);
 
-  Book.create = function(callback) {
+  Book.prototype.create = function(callback) {
     $.post(`${ENV.apiUrl}/api/v1/books/`,{
       author: this.author,
-      title: this.title, 
-      isbn: this.isbn, 
+      title: this.title,
+      isbn: this.isbn,
       image_url: this.image_url,
       description: this.description
     }).then(callback)
       .catch(errorCallback);
-  }
+  };
 
   module.Book = Book;
 })(app);
