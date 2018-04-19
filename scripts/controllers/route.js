@@ -3,9 +3,11 @@ var app = app || {};
 
 
 page('/*', (ctx, next) => {
-  $('.page').hide();
+  $('.container').hide();
   next();
 });
 
-page('/', app.bookView.initIndexPage);
+page('/', app.bookView.showAll);
+page('/details', app.Book.fetchOne);
+page('/new', app.addBook.init);
 page.start();

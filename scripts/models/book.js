@@ -39,5 +39,16 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
       .then(callback)
       .catch(errorCallback);
 
+  Book.create = function(callback) {
+    $.post(`${ENV.apiUrl}/api/v1/books/`,{
+      author: this.author,
+      title: this.title, 
+      isbn: this.isbn, 
+      image_url: this.image_url,
+      description: this.description
+    }).then(callback)
+      .catch(errorCallback);
+  }
+
   module.Book = Book;
-})(app)
+})(app);
