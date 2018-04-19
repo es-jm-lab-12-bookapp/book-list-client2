@@ -6,7 +6,7 @@ const ENV = {};
 
 ENV.isProduction = window.location.protocol === 'https:';
 ENV.productionApiUrl = 'insert cloud API server URL here';
-ENV.developmentApiUrl = 'insert local API server URL here';
+ENV.developmentApiUrl = 'http://localhost:3000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 (function(module) {
@@ -33,5 +33,22 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
       .then(callback)
       .catch(errorCallback);
 
+  Book.fetchOne = callback =>
+    $.get(`${ENV.apiUrl}/api/v1/books/:id`)
+      .then(Book.loadOne)
+      .then(callback)
+      .catch(errorCallback);
+
+  Book.create = function(callback) {
+    $.post(`${ENV.apiUrl}/api/v1/books/`,{
+      author: this.author,
+      title: this.title, 
+      isbn: this.isbn, 
+      image_url: this.image_url,
+      description: this.description
+    }).then(callback)
+      .catch(errorCallback);
+  }
+
   module.Book = Book;
-})(app)
+})(app);
