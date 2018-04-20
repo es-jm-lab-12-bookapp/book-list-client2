@@ -14,7 +14,6 @@ var app = app || {};
 
 
   bookView.showAll = function() {
-    $('#single-book').empty();  
     $('.container').hide();
     $('.book-view').show();
   };

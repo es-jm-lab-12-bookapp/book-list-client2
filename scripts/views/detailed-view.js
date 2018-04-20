@@ -4,6 +4,7 @@ var app = app || {};
 (function(module){
 
   const bookDetails = {};
+  const template = Handlebars.compile($('#book-details-template').text());
 
   bookDetails.initDetailView = function() {
     $('.container').hide();
@@ -11,7 +12,7 @@ var app = app || {};
   };
 
   bookDetails.render = (book) => {
-    let template = Handlebars.compile($('#book-details-template').text());
+    $('#single-book').empty();
     $('#single-book').append(template(book[0]));
     app.bookDetails.initDetailView();
   };
