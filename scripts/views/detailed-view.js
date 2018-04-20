@@ -12,9 +12,9 @@ var app = app || {};
   };
 
   bookDetails.render = (book) => {
+    app.bookDetails.initDetailView();
     $('#single-book').empty();
     $('#single-book').append(template(book[0]));
-    app.bookDetails.initDetailView();
   };
 
   module.bookDetails = bookDetails;
