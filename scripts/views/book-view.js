@@ -8,13 +8,13 @@ var app = app || {};
   bookView.initIndexPage = function() {
     $('.container').hide();
     $('.book-view').show();
+    $('#single-book').empty();
     module.Book.all.map(book => $('#book-list').append(book.toHtml()));
-    module.bookDetails.find();
   };
 
 
   bookView.showAll = function() {
-
+    $('#single-book').empty();  
     $('.container').hide();
     $('.book-view').show();
   };

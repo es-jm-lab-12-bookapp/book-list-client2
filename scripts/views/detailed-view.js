@@ -8,19 +8,14 @@ var app = app || {};
   bookDetails.initDetailView = function() {
     $('.container').hide();
     $('.book-details').show();
+  };
+
+  bookDetails.render = (book) => {
     let template = Handlebars.compile($('#book-details-template').text());
+    $('#single-book').append(template(book[0]));
+    app.bookDetails.initDetailView();
   };
-  bookDetails.find = () => {
-    $('.book-items').each(function(){
-      $(this).on('click', () => {
 
-        let book = new app.Book(app.Book.all[$(this).data('bookid')-1]);
-        // console.log(book);
-        book.fetchOne(book);
-
-      });
-    });
-  };
   module.bookDetails = bookDetails;
 
 })(app);

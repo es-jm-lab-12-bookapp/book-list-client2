@@ -19,7 +19,7 @@
   <script type="text/x-handlebars-template" id="book-list-template">
     <li class="book-items" data-bookid={{book_id}}>
       <div class="book-container">
-        <img src={{image_url}}>
+        <a href="/book/{{book_id}}"><img src={{image_url}}></a>
         <div class="book-overlay">
           <h3>{{title}}</h3>
           <p>{{author}}</p>
@@ -29,7 +29,7 @@
   </script>
 
   <script type="text/x-handlebars-template" id="book-details-template">
-    <div class="book-items" data-bookid={{book_id}}>
+    <div class="book-items" data-bookid="{{book_id}}">
       <div class="book-container">
         <img src={{image_url}}>
         <div class="book-overlay">
@@ -65,12 +65,9 @@
         <ul id="book-list"></ul>
       </section>
     </section>
-    <section>
-      <section class="book-details container" id="single-book">
+    <section class="book-details container" id="single-book">
 
-      </section>
     </section>
-
     <section>
       <section class="new-book container" id="new-book">
         <input type="text" id="title" placeholder="title" required>

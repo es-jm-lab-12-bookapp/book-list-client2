@@ -29,15 +29,17 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
   Book.loadOne = book => console.log(book);
 
+
+
   Book.fetchAll = callback =>
     $.get(`${ENV.apiUrl}/api/v1/books`)
       .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback);
 
-  Book.prototype.fetchOne = function(callback) {
-    $.get(`${ENV.apiUrl}/api/v1/books/${this.book_id}`)
-      .then(Book.loadOne)
+  Book.fetchOne = function(callback) {
+    $.get(`${ENV.apiUrl}/api/v1/books/${callback}`)
+      .then(app.bookDetails.render)
       .then(callback)
       .catch(errorCallback);
   };
