@@ -1,6 +1,10 @@
 'use strict';
 var app = app || {};
 
+// tweak to run on GH Pages
+if (window.location.protocol.startsWith('https:')) {
+  page.base('/internets-of-thing');
+}
 
 page('/*', (ctx, next) => {
   $('.container').hide();

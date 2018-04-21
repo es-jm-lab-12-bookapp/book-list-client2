@@ -24,7 +24,7 @@ var app = app || {};
     });
     console.log(book);
     book.create();
-    // window.location = '/';
+    window.location = '/';
   };
 
   module.addBook = addBook;
