@@ -1,10 +1,10 @@
 'use strict';
 var app = app || {};
 
-// tweak to run on GH Pages
-if (window.location.protocol.startsWith('https:')) {
-  page.base('/book-list-client2');
-}
+// // tweak to run on GH Pages
+// if (window.location.protocol.startsWith('https:')) {
+//   page.base('/book-list-client2');
+// }
 
 page('/*', (ctx, next) => {
   $('.container').hide();
