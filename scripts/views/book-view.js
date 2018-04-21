@@ -8,15 +8,15 @@ var app = app || {};
   bookView.initIndexPage = function() {
     $('.container').hide();
     $('.book-view').show();
+    $('#single-book').empty();
     module.Book.all.map(book => $('#book-list').append(book.toHtml()));
   };
 
-  bookView.showAll = function() {
 
+  bookView.showAll = function() {
     $('.container').hide();
     $('.book-view').show();
-  }
-
+  };
   module.bookView = bookView;
 })(app);
 

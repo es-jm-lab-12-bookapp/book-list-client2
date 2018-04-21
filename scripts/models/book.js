@@ -33,11 +33,12 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
       .then(callback)
       .catch(errorCallback);
 
-  Book.fetchOne = callback =>
-    $.get(`${ENV.apiUrl}/api/v1/books/:id`)
-      .then(Book.loadOne)
+  Book.fetchOne = function(callback) {
+    $.get(`${ENV.apiUrl}/api/v1/books/${callback}`)
+      .then(app.bookDetails.render)
       .then(callback)
       .catch(errorCallback);
+  };
 
   Book.prototype.create = function(callback) {
     $.post(`${ENV.apiUrl}/api/v1/books/`,{
