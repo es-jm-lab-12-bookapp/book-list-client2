@@ -1,6 +1,33 @@
 .container {
   margin-top: 20%;
 }
+.book-detailed {
+  color: gray;
+}
+.details {
+  background: rgba(0,0,0,0);
+  color: gray;
+}
+.title {
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+
+}
+.image-container {
+  background: white;
+  margin-top: 50px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+.author {
+  float: left;
+}
+.isbn {
+  float: right;
+}
 input {
   width: 100%;
   height: 25px; 
@@ -32,6 +59,12 @@ textarea {
 .book-container img {
   max-width: 100%;
   margin-left: 25%;
+}
+.image-container .detailed-view {
+  clear: both;
+  display: block;
+  margin: 0px auto;
+  padding: 15px;
 }
 
 .book-items {
