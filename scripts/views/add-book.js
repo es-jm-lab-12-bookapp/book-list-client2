@@ -22,7 +22,6 @@ var app = app || {};
       image_url: $('#image_url').val(),
       description: $('#description').val()
     });
-    console.log(book);
     book.create();
     window.location = '/';
   };
