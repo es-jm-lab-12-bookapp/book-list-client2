@@ -15,10 +15,8 @@ textarea {
   border-radius: 7px;
 }
 .new-book {
-  width: 30%;
-  margin-top: 300px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 50%;
+  margin: 20vh auto;
 
 }
 .view-title {
@@ -33,6 +31,7 @@ textarea {
 
 .book-container img {
   max-width: 100%;
+  margin-left: 25%;
 }
 
 .book-items {
@@ -53,6 +52,30 @@ textarea {
   margin: auto;
 }
 
+.book-overlay>p {
+  padding: 0;
+  clear: both;
+  float: left;
+  font-size: 0.75em;
+}
+.book-overlay>h3 {
+  padding: 0;
+  margin: 5px 0px;
+  float: left;
+}
+
+#view-detail {
+  padding: 0;
+  float: right;
+  margin-top: 1vh;
+  margin-right: 1vw;
+  width: 20vw;
+  height: 2.5vh;
+  border: none;
+  border-radius: 5px;
+  text-transform: lowercase;
+}
+
 #add-book {
   float: right;
   background-color: black;
@@ -65,7 +88,7 @@ textarea {
 .book-overlay * {
   text-transform: capitalize;
   text-align: center;
-  padding: 2vw;
+  padding: 3vw;
 }
 
 .social-links ul {

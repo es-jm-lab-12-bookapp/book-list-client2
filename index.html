@@ -19,10 +19,11 @@
   <script type="text/x-handlebars-template" id="book-list-template">
     <li class="book-items" data-bookid={{book_id}}>
       <div class="book-container">
-        <a href="/book/{{book_id}}"><img src={{image_url}}></a>
+        <img src={{image_url}}>
         <div class="book-overlay">
           <h3>{{title}}</h3>
           <p>{{author}}</p>
+          <a href="/book/{{book_id}}"><button type="button" id="view-detail">veiw details</button></a>
         </div>
       </div>
     </li>
@@ -32,7 +33,7 @@
     <div class="book-items" data-bookid="{{book_id}}">
       <div class="book-container">
         <img src={{image_url}}>
-        <div class="book-overlay">
+        <div class="book-overlay details">
           <h3>{{title}}</h3>
           <p><em>{{author}}</em>{{isbn}}</p>
           <p>{{description}}</p>
@@ -46,11 +47,12 @@
     <div class="header-content">
       <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
       <h1>Code Fellows Books</h1>
+      <div class="icon-menu hamburger"></div>
     </div>
     <nav>
-        <ul>
-          <li><a href="/">home</a></li>
-          <li><a href="/new">Add a book!</a></li>
+        <ul class="main-nav" id="nav-ul">
+          <li><a href="/">View All Books</a></li>
+          <li><a href="/new">Add A New Book</a></li>
         </ul>
       </nav>
   </header>

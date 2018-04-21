@@ -11,11 +11,15 @@ main {
   margin: 1vw auto;
 }
 
+img {
+  align-content: center;
+}
+
 header {
   position: fixed;
   z-index: 99;
   background-color: #444;
-  padding: 1.5vw 0;
+  padding: 1.5vw 0vw 0vw 0vw;
   width: 100%;
   top: 0;
 }
