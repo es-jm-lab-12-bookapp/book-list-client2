@@ -23,7 +23,6 @@ var app = app || {};
       description: $('#description').val()
     });
     book.create();
-    window.location = '/';
   };
 
   module.addBook = addBook;
